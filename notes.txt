@@ -1,0 +1,5 @@
+use the find and recplace on u_datafmt to change it to format and on t_percentid to change it to t_pid
+
+think of other things that might need changed
+
+redo the removed header file
