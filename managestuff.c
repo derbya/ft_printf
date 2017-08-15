@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 18:33:33 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/13 18:42:53 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/14 18:52:20 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ t_printf        *newlist(void)
 	if (!(new = (t_printf *)ft_memalloc(sizeof(t_printf))))
 		return (NULL);
 	new->type = -1;
-	new->print_function = NULL;
+	new->function = NULL;
 	new->str = NULL;
-	new->mods = NULL;
+	new->pid = NULL;
 	new->next = NULL;
 	return (new);
 }
@@ -32,7 +32,7 @@ int         storechar_prints(t_printf **print1, const char c, int ret)
 
 	if ((*print1)->type == -1)
 		(*print1)->type = STRING_TYPE;
-	else if ((*print1)->type != STRING_type)
+	else if ((*print1)->type != STRING_TYPE)
 	{
 		(*print1)->next = newlist();
 		*print1 = (*print1)->next;

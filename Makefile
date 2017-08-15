@@ -6,7 +6,7 @@
 #    By: aderby <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:20:14 by aderby            #+#    #+#              #
-#    Updated: 2017/08/14 03:30:43 by aderby           ###   ########.fr        #
+#    Updated: 2017/08/14 18:50:27 by aderby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ C_FIL = ft_freeprintf.c ft_pidstuff.c ft_printf.c libfuncs1.c libfuncs2.c \
 		libfuncs3.c libfuncs4.c libfuncs5.c libfuncs6.c libfuncswchar.c \
 		libfuncswchar2.c manageformat.c managepcent.c precentstuff.c \
 		setstuff.c signedintstuff.c stringstuff.c unionstuff.c \
-		unsignedintstuff.c widestuff.c widestuff2.c
+		unsignedintstuff.c widestuff.c widestuff2.c managestuff.c
 
 O_FIL = *.o
 
