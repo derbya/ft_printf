@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:49:22 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 16:57:54 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:33:42 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 
 int		set_flags(t_printf **print1, char *s, int j)
 {
-	while (s[j] == '#' || s[j] == '0' || s[j] == '-' || s[j] == ' ' || s[j] == '+')
+	while (s[j] == '#' || s[j] == '0' || s[j] == '-' ||
+			s[j] == ' ' || s[j] == '+')
 	{
 		if (s[j] == '#')
 			(*print1)->pid->f_alt = 1;
@@ -58,11 +59,12 @@ int		set_length(t_printf **print1, char *s, int j)
 {
 	if (ft_islengthchar(s[j]))
 	{
-		if ((s[j] == 'h' && s[j +1] == 'h') || (s[j] == 'l' && s[j + 1] == 'l'))
+		if ((s[j] == 'h' && s[j + 1] == 'h') ||
+				(s[j] == 'l' && s[j + 1] == 'l'))
 		{
 			if (s[j] + 1 == 'h')
 				(*print1)->pid->len = L_HH;
-			else if (s[j +1] == 'l')
+			else if (s[j + 1] == 'l')
 				(*print1)->pid->len = L_LL;
 			return (j + 2);
 		}
@@ -79,31 +81,31 @@ int		set_length(t_printf **print1, char *s, int j)
 	return (j);
 }
 
-int		set_type(t_printf **print1, char *s, int j)
+int		set_type(t_printf **p, char *s, int j)
 {
 	if (ft_isconversionchar(s[j]))
 	{
-		(*print1)->type = ((s[j] == 's' || s[j] == 'S') ? S_TYPE : (*print1)->type);
-		(*print1)->type = ((s[j] == 'c' || s[j] == 'C') ? C_TYPE : (*print1)->type);
-		(*print1)->type = ((s[j] == 'd' || s[j] == 'i') ? DI_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'D' ? DD_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'o' ? O_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'O' ? OO_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'u' ? U_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'U' ? UL_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'x' ? X_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'X' ? XX_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'p' ? P_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == '%' ? PCNT_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'b' ? B_TYPE : (*print1)->type);
-		(*print1)->type = (s[j] == 'B' ? BB_TYPE : (*print1)->type);
-		(*print1)->pid->base = (s[j] == 'x' || s[j] == 'X' ? 16 : (*print1)->pid->base);
-		(*print1)->pid->base = (s[j] == 'o' || s[j] == 'O' ? 8 : (*print1)->pid->base);
-		(*print1)->pid->base = (s[j] == 'b' || s[j] == 'B' ? 2 : (*print1)->pid->base);
-		(*print1)->pid->xbase = (s[j] == 'X' ? 1 : -1);
+		(*p)->type = ((s[j] == 's' || s[j] == 'S') ? S_TYPE : (*p)->type);
+		(*p)->type = ((s[j] == 'c' || s[j] == 'C') ? C_TYPE : (*p)->type);
+		(*p)->type = ((s[j] == 'd' || s[j] == 'i') ? DI_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'D' ? DD_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'o' ? O_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'O' ? OO_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'u' ? U_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'U' ? UL_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'x' ? X_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'X' ? XX_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'p' ? P_TYPE : (*p)->type);
+		(*p)->type = (s[j] == '%' ? PCNT_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'b' ? B_TYPE : (*p)->type);
+		(*p)->type = (s[j] == 'B' ? BB_TYPE : (*p)->type);
+		(*p)->pid->base = (s[j] == 'x' || s[j] == 'X' ? 16 : (*p)->pid->base);
+		(*p)->pid->base = (s[j] == 'o' || s[j] == 'O' ? 8 : (*p)->pid->base);
+		(*p)->pid->base = (s[j] == 'b' || s[j] == 'B' ? 2 : (*p)->pid->base);
+		(*p)->pid->xbase = (s[j] == 'X' ? 1 : -1);
 		F_ALT = (s[j] == 'x' || s[j] == 'X') && F_ALT != -1 ? 16 : F_ALT;
 		F_ALT = (s[j] == 'o' || s[j] == 'O') && F_ALT != -1 ? 8 : F_ALT;
-		return ((*print1)->type == -1 ? -1 : j + 1);
+		return ((*p)->type == -1 ? -1 : j + 1);
 	}
 	return (-1);
 }

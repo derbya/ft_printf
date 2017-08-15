@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 18:27:46 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 03:55:00 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:29:28 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int			pf_percent(t_printf *print1)
 
 	if (!(s = ft_strdup("%")))
 		return (-1);
-	pad = (print1->pid->f_zero != -1)? '0' : ' ';
-	pad = (print1->pid->f_ladj != -1)? ' ' : pad;
+	pad = (print1->pid->f_zero != -1) ? '0' : ' ';
+	pad = (print1->pid->f_ladj != -1) ? ' ' : pad;
 	s_len = 1;
 	spaces = print1->pid->fw - s_len;
 	if (spaces > 0)
