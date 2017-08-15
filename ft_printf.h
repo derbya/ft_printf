@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 16:35:08 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:37:57 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:39:37 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define PFT (*print1)->type
 # define PPID (*print1)->pid
 # define F_ALT (*print1)->pid->f_alt
-# define F_ALT (*p)->pid->f_alt
+# define FF_ALT (*p)->pid->f_alt
 # define UIM (*print1)->pid->fmt->uim
 # define IM (*print1)->pid->fmt->im
 # define NIM print1->pid->fmt->im
