@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 16:35:08 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 17:36:36 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/14 22:10:29 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 
 # define PID print1->pid
 # define FIELD_W print1->pid->fw

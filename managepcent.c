@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 18:43:03 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 16:28:27 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/14 23:55:23 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,9 @@ int	store_formatmods(t_printf **print1, char *s, va_list *a, int r)
 		{
 			readjust_percentid(print1, s, i);
 			if (!(store_datafmt(print1, a)))
+			{
 				return (-1);
+			}
 			return (i + r);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 17:33:51 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 03:54:27 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/14 22:20:46 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*ft_intmax_to_ascii(intmax_t val, int base, char *b)
 	val *= (val < 0) ? -1 : 1;
 	while (len--)
 	{
-		s[len] = (flag ? b[((INTMAX_MIN & base) * -1)] : b[val % base]);
+		s[len] = (flag ? b[((INTMAX_MIN % base) * -1)] : b[val % base]);
 		flag = 0;
 		val /= base;
 	}
