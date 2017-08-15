@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 16:35:08 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:39:37 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:47:46 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ typedef union		u_format
 	wchar_t			*ws;
 	intmax_t		im;
 	uintmax_t		uim;
-}               	t_format;
+}					t_format;
 
 typedef struct		s_pid
 {
@@ -201,6 +201,6 @@ void				initialize_function(t_function *function);
 t_pid				*new_percentid(void);
 int					set_uniondata(t_printf **print1, int type, va_list *args);
 int					store_datafmt(t_printf **print1, va_list *args);
-int					store_formatmods(t_printf **print1, char *s, va_list *a, int r);
+int					store_formatmods(t_printf **p, char *s, va_list *a, int r);
 
 #endif

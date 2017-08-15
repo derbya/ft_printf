@@ -6,13 +6,13 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 16:32:29 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:04:40 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:45:42 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_printf.h"
 
-static int		initialize_printfs(t_printf **print1, t_printf **print2)
+static int	initialize_printfs(t_printf **print1, t_printf **print2)
 {
 	if (!(*print1 = newlist()))
 		return (0);
@@ -20,9 +20,9 @@ static int		initialize_printfs(t_printf **print1, t_printf **print2)
 	return (1);
 }
 
-static int		print_everything(t_printf **print2)
+static int	print_everything(t_printf **print2)
 {
-	int i;
+	int			i;
 	t_printf	*tmp;
 
 	i = 0;
@@ -49,7 +49,6 @@ int			ft_printf(char *fmt, ...)
 	t_printf	*print1;
 	t_printf	*print2;
 	int			ret;
-
 
 	va_start(args, fmt);
 	if (!(initialize_printfs(&print1, &print2)))

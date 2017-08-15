@@ -6,15 +6,15 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 18:33:33 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 18:52:20 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:43:21 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ft_printf.h"
 
-t_printf        *newlist(void)
+t_printf	*newlist(void)
 {
-	t_printf    *new;
+	t_printf	*new;
 
 	if (!(new = (t_printf *)ft_memalloc(sizeof(t_printf))))
 		return (NULL);
@@ -26,7 +26,7 @@ t_printf        *newlist(void)
 	return (new);
 }
 
-int         storechar_prints(t_printf **print1, const char c, int ret)
+int			storechar_prints(t_printf **print1, const char c, int ret)
 {
 	int len;
 

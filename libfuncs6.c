@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:26:13 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:02:30 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:40:58 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ long long	ft_atoll(const char *str)
 	return (res * isneg);
 }
 
-char	*ft_strdup(const char *s1)
+char		*ft_strdup(const char *s1)
 {
 	char	*s;
 	int		i;
@@ -79,6 +79,7 @@ char	*ft_strdup(const char *s1)
 	s[i] = s1[i];
 	return (s);
 }
+
 char		*ft_strncpy(char *dest, const char *src, size_t len)
 {
 	size_t	i;

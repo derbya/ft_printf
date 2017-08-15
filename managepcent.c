@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 18:43:03 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:25:24 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:48:59 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ t_pid		*new_percentid(void)
 	return (new);
 }
 
-int			store_formatmods(t_printf **print1, char *s, va_list *a, int r)
+int			store_formatmods(t_printf **p, char *s, va_list *a, int r)
 {
 	int			i;
 	int			b;
@@ -93,18 +93,18 @@ int			store_formatmods(t_printf **print1, char *s, va_list *a, int r)
 	i = 0;
 	b = 0;
 	initialize_function(function);
-	(*print1)->next = ((*print1)->type != -1) ? newlist() : NULL;
-	*print1 = ((*print1)->type != -1) ? (*print1)->next : *print1;
+	(*p)->next = ((*p)->type != -1) ? newlist() : NULL;
+	*p = ((*p)->type != -1) ? (*p)->next : *p;
 	if (s[++i])
 	{
-		if (!((*print1)->pid = new_percentid()))
+		if (!((*p)->pid = new_percentid()))
 			return (-1);
 		while (i != -1 && b < 5)
-			i = function[b++].f(print1, s, i);
+			i = function[b++].f(p, s, i);
 		if (i != -1)
 		{
-			readjust_percentid(print1, s, i);
-			if (!(store_datafmt(print1, a)))
+			readjust_percentid(p, s, i);
+			if (!(store_datafmt(p, a)))
 				return (-1);
 			return (i + r);
 		}

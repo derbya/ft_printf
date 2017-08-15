@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:30:49 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 17:39:11 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:46:15 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	free_printf_pid(t_pid **pid)
 void	free_all(t_printf **head)
 {
 	t_printf *tmp;
+
 	if (*head)
 	{
 		while (*head)

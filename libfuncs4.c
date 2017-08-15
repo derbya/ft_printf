@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:16:15 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 21:53:52 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:44:00 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	*ft_memalloc(size_t n)
 	ft_memset(mem, 0, n);
 	return (mem);
 }
+
 void	ft_putnbr(int n)
 {
 	char	c;

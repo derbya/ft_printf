@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:00:57 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 16:45:40 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:44:47 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strfresize(char **s, size_t newsize)
 
 int		ft_iswhitespace(int c)
 {
-	if (c == ' '|| c == '\n' || c == '\t' || c == '\v' || c == '\r' ||
+	if (c == ' ' || c == '\n' || c == '\t' || c == '\v' || c == '\r' ||
 			c == '\f')
 		return (1);
 	return (0);

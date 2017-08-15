@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:05:34 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 16:45:08 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:43:49 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	ft_strdeltwo(char **s, char **s2)
 	ft_strdel(s);
 	ft_strdel(s2);
 }
+
 void	ft_strdelthree(char **s, char **s2, char **s3)
 {
 	ft_strdel(s);

@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:22:33 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/13 16:24:38 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:44:15 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_strdel(char **as)
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char    *str;
+	char	*str;
 
 	if (s)
 	{
