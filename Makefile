@@ -6,35 +6,34 @@
 #    By: aderby <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/08 14:20:14 by aderby            #+#    #+#              #
-#    Updated: 2017/07/08 14:51:37 by aderby           ###   ########.fr        #
+#    Updated: 2017/08/14 03:30:43 by aderby           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fdf
+NAME = libftprintf.a
 
-C_FIL = draw.c draw_bres.c hooks.c init.c initialize.c input.c main.c \
-		rotate.c tands.c
+C_FIL = ft_freeprintf.c ft_pidstuff.c ft_printf.c libfuncs1.c libfuncs2.c \
+		libfuncs3.c libfuncs4.c libfuncs5.c libfuncs6.c libfuncswchar.c \
+		libfuncswchar2.c manageformat.c managepcent.c precentstuff.c \
+		setstuff.c signedintstuff.c stringstuff.c unionstuff.c \
+		unsignedintstuff.c widestuff.c widestuff2.c
 
 O_FIL = *.o
-O_LOC = obj
 
-GCC_FLAGS = gcc -Wall -Wextra -Werror -L miniLibx -lmlx -framework OpenGL \
-			-framework AppKit
-
-LIB = libft/libft.a
+GCC_FLAGS = gcc -Wall -Wextra -Werror -c
 
 all: $(NAME)
 
-$(NAME):
-		cd libft && make re
-		cd miniLibx && make re
-			$(GCC_FLAGS) $(LIB) $(C_SRC) $(C_FIL) -o $(NAME)
+$(O_FIL): $(C_FIL)
+	$(GCC_FLAGS) $(C_FIL)
+
+$(NAME): $(O_FIL)
+	ar rcs $(NAME) $(O_FIL)
 
 clean:
-		cd libft && make clean
+		rm -f $(O_FIL)
 
 fclean: clean
-		cd libft && make fclean
-			/bin/rm -f $(NAME)
+		rm -f $(NAME)
 
 re: fclean all
