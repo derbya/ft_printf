@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 17:33:51 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 22:20:46 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:16:39 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,14 +110,14 @@ int			pf_signedint(t_printf *print1)
 	int		s_len;
 
 	if (!(s = (PID->prec == 0 && PID->fmt->im == 0) ? ft_strnew(0) :
-				ft_intmax_to_ascii(print1->pid->fmt->im, print1->pid->base, "0123456789ABCDEF")))
+				ft_intmax_to_ascii(NIM, PID->base, "0123456789ABCDEF")))
 		return (-1);
 	pad = (print1->pid->f_zero != -1 ? '0' : ' ');
 	s_len = ft_strlen(s);
 	if (print1->pid->prec > s_len)
 		if (!(s_len = add_precision(&s, print1->pid->prec - s_len)))
 			return (-1);
-	if (print1->pid->f_sign != -1 || print1->pid->f_space != -1 || print1->pid->fmt->im < 0)
+	if (print1->pid->f_sign != -1 || print1->pid->f_space != -1 || NIM < 0)
 		if (!(s_len = add_sign(&s, print1)))
 			return (-1);
 	if (print1->pid->fw > s_len)

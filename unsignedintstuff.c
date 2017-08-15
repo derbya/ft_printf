@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 17:09:27 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 03:44:56 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:12:52 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ static int	add_fieldwidth(char **str, char **chars, t_printf *print1)
 	{
 		if (print1->pid->f_alt == 16 || print1->pid->f_alt == 8)
 		{
-			tmp = ft_strsub(*str, 0, (print1->pid->f_alt == 16 ? 2: 1));
-			tmp2 = ft_strsub(*str, (print1->pid->f_alt == 16 ? 2: 1),
+			tmp = ft_strsub(*str, 0, (print1->pid->f_alt == 16 ? 2 : 1));
+			tmp2 = ft_strsub(*str, (print1->pid->f_alt == 16 ? 2 : 1),
 					ft_strlen(*str) - (print1->pid->f_alt == 16 ? 2 : 1));
 			tmp = ft_strffjoin(&tmp, chars);
 			tmp = ft_strffjoin(&tmp, &tmp2);
@@ -118,8 +118,8 @@ int			pf_unsignedint(t_printf *print1)
 	int		s_len;
 
 	if (!(s = (PID->prec == 0 && PID->base != 10 && PID->fmt->uim == 0
-					? ft_strnew(0)
-					: ft_uintmax_to_ascii(PID->fmt->uim, PID->base, PID->xbase))))
+					? ft_strnew(0) :
+					ft_uintmax_to_ascii(PID->fmt->uim, PID->base, PID->xbase))))
 		return (-1);
 	pad = (PID->f_zero != -1 ? '0' : ' ');
 	s_len = ft_strlen(s);
