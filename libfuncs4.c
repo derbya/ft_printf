@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:16:15 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 16:44:48 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/14 21:50:47 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,27 +43,53 @@ void	*ft_memalloc(size_t n)
 	ft_memset(mem, 0, n);
 	return (mem);
 }
+/*
+   void	ft_putnbr(int n)
+   {
+   char	c;
 
+   if (n < 0)
+   {
+   ft_putchar('-');
+   n = n * -1;
+   }
+   if (n == -2147483648)
+   {
+   n = 147483648;
+   ft_putchar('2');
+   }
+   if (n / 10 > 0)
+   ft_putnbr(n / 10);
+   c = n % 10 + '0';
+   ft_putchar(c);
+   }
+   */
 void	ft_putnbr(int n)
 {
-	char	c;
+	int flag;
 
+	flag = 0;
+	if (n == -2147483648)
+	{
+		flag = 1;
+		n += 1;
+	}
 	if (n < 0)
 	{
 		ft_putchar('-');
-		n = n * -1;
+		n = -n;
 	}
-	if (n == -2147483648)
+	if (n >= 10)
 	{
-		n = 147483648;
-		ft_putchar('2');
-	}
-	if (n / 10 > 0)
 		ft_putnbr(n / 10);
-	c = n % 10 + '0';
-	ft_putchar(c);
+		if (flag == 1)
+			ft_putchar('8');
+		else
+			ft_putchar((n % 10) + '0');
+	}
+	else
+		ft_putchar(n + '0');
 }
-
 char	*ft_strnew(size_t size)
 {
 	char	*ptr;
