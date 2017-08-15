@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 17:29:07 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:03:08 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:22:24 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static char	*add_fieldwidth(char **s, int f_ladj, int spaces)
 	}
 	return (*s);
 }
+
 int			pf_string(t_printf *print1)
 {
 	char	*s;

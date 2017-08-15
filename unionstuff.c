@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 18:50:21 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:02:40 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:19:31 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ int			set_uniondata(t_printf **print1, int type, va_list *args)
 	}
 	else if (IS_SIGNED(type) || IS_UNSIGNED(type))
 	{
-		IS_SIGNED(type) ? set_signed(print1, type, args) : set_unsigned(print1,type, args);
+		IS_SIGNED(type) ? set_signed(print1, type, args)
+			: set_unsigned(print1, type, args);
 		(*print1)->function = IS_SIGNED(type) ? &pf_signedint : &pf_unsignedint;
 	}
 	else if (type == B_TYPE || type == BB_TYPE)

@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 18:43:03 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/14 23:55:23 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:25:24 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	continue_readjusting_percentid(t_printf **print1)
 {
-	if(PFT == DD_TYPE || PFT == OO_TYPE || PFT == UU_TYPE)
+	if (PFT == DD_TYPE || PFT == OO_TYPE || PFT == UU_TYPE)
 	{
 		PFT = (PFT == DD_TYPE) ? L_TYPE : PFT;
 		PFT = (PFT == OO_TYPE) ? UL_TYPE : PFT;
@@ -84,7 +84,7 @@ t_pid		*new_percentid(void)
 	return (new);
 }
 
-int	store_formatmods(t_printf **print1, char *s, va_list *a, int r)
+int			store_formatmods(t_printf **print1, char *s, va_list *a, int r)
 {
 	int			i;
 	int			b;
@@ -105,9 +105,7 @@ int	store_formatmods(t_printf **print1, char *s, va_list *a, int r)
 		{
 			readjust_percentid(print1, s, i);
 			if (!(store_datafmt(print1, a)))
-			{
 				return (-1);
-			}
 			return (i + r);
 		}
 	}
