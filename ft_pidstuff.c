@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:49:22 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:33:42 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 00:38:10 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ int		set_type(t_printf **p, char *s, int j)
 		(*p)->pid->base = (s[j] == 'o' || s[j] == 'O' ? 8 : (*p)->pid->base);
 		(*p)->pid->base = (s[j] == 'b' || s[j] == 'B' ? 2 : (*p)->pid->base);
 		(*p)->pid->xbase = (s[j] == 'X' ? 1 : -1);
-		F_ALT = (s[j] == 'x' || s[j] == 'X') && F_ALT != -1 ? 16 : F_ALT;
-		F_ALT = (s[j] == 'o' || s[j] == 'O') && F_ALT != -1 ? 8 : F_ALT;
+		FF_ALT = (s[j] == 'x' || s[j] == 'X') && FF_ALT != -1 ? 16 : FF_ALT;
+		FF_ALT = (s[j] == 'o' || s[j] == 'O') && FF_ALT != -1 ? 8 : FF_ALT;
 		return ((*p)->type == -1 ? -1 : j + 1);
 	}
 	return (-1);
