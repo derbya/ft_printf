@@ -6,7 +6,7 @@
 /*   By: aderby <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 16:49:22 by aderby            #+#    #+#             */
-/*   Updated: 2017/08/15 00:38:10 by aderby           ###   ########.fr       */
+/*   Updated: 2017/08/15 21:23:05 by aderby           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		set_length(t_printf **print1, char *s, int j)
 		if ((s[j] == 'h' && s[j + 1] == 'h') ||
 				(s[j] == 'l' && s[j + 1] == 'l'))
 		{
-			if (s[j] + 1 == 'h')
+			if (s[j + 1] == 'h')
 				(*print1)->pid->len = L_HH;
 			else if (s[j + 1] == 'l')
 				(*print1)->pid->len = L_LL;
